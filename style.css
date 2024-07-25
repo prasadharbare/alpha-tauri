@@ -1,38 +1,49 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+main{
+    height: 100vh;
+    width: 100vw;
+}
+body{
+    font-family: "Teacher",sans-serif;
 }
 
-.parent{
-height: 500px;
-width: 500px;
-border: 2px solid rgb(43, 0, 255);
-grid-template-columns: 100px 100px 100px;
-grid-template-rows: 100px 100px 100px;
-display: grid;
-justify-content: center;
-align-content: center;
-justify-items: center;
-align-items: center;
+.container{
+    height:100vh;
+    width:100vw;
+    display:grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 25% 55% 20%;
 
 }
+    header,main,footer.aside{
+        padding right:2px;
+    }
+    
 
-.box{
-    background: red;
-    border: 1px solid black;
-    height: 100%;
-    /* min-height: 100%; */
-    width: 100%;
+
+aside{
+    grid-column: 2;
+    grid-row: 1/-1;
 }
-.chick{
-    background-color: black;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-column: 2/-1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
+aside video{
+    height:100%;
+    width:100%;
+    object-fit:cover;
+}
+
+/* Mark Responsive */
+@media screen and (max-width:680px) {
+    .container{
+        grid-template-columns: 100%;
+        grid-template-rows: 25% 30% 15% 30%;
+    }
+    aside{
+        grid-row: 4;
+        grid-column: 1;
+    }
 }
